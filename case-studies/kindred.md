@@ -1,6 +1,6 @@
 # Kindred: volunteer once, qualify everywhere
 
-**Live demo** · Role: product, design and build (solo, AI-assisted) · Oct 2026 · Next.js 15 · React 19 · TypeScript ·
+**Live demo** · Role: hackathon project, team of four; I did the product, design and build (AI-assisted, with Claude Code) · Oct 2026 · Next.js 15 · React 19 · TypeScript ·
 Postgres (Neon) with row-level security · Vercel · Claude Haiku 5.5 · Claude Code
 
 ![Kindred: Maya's shift marketplace on desktop, and the credential that unlocks 14 shifts on her phone](img/kindred/hero.jpg)

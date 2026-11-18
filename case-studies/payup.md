@@ -7,13 +7,30 @@ TypeScript · Next.js · Postgres · Claude API · Cloudflare · Vercel
 *A household circle on desktop and the overview on the installable mobile app (demo data, fictional people).*
 
 ## TL;DR
-- **One typed sentence or a receipt photo becomes a correctly split expense,** across 162 currencies and 5 languages.
-- **An AI assistant can operate it safely:** 17 MCP tools behind PayUp's own OAuth server; it can read and file, never settle.
+- **Customer problem:** shared households split money across currencies, receipts and unequal contributions, and apps built
+  for a weekend trip break down.
+- **Workflow and agents:** one typed sentence or a receipt photo becomes a correctly split expense (162 currencies, 5
+  languages), and an AI assistant such as Claude can run the household's admin through **17 MCP tools** behind PayUp's own
+  OAuth server: 7 read tools and 10 that file or edit. It can read and file, never settle.
+- **Why the agents must be safe:** an AI that writes to a ledger can invent a person or an amount, or run up a bill. So every
+  AI field is re-validated, spend is capped before the call, and no tool exists that finishes anything (settle, mark done,
+  confirm). A test asserts those tools are absent.
 - **Built like a product, not a demo:** 377 commits and 85 merged pull requests in 25 active days, 60 test files gated in CI.
 
 ## The problem
 Splitting apps handle a weekend trip but strain under a shared household: rent in one currency, a holiday in another,
 receipts with tax and tip, and one person quietly covering more than their share.
+
+## The agents at work
+- **Entry agent.** "Paid $63.24 for groceries at Whole Foods, split with the flat" fills in amount, category, place and
+  group. A receipt photo or PDF becomes line items each person claims. The model may answer "not sure" instead of guessing,
+  and the output is schema-checked and re-validated, so a hallucinated person or amount is never written.
+- **Assistant over MCP.** Claude connects through PayUp's own OAuth server (dynamic client registration, PKCE, rotating
+  refresh tokens, audience binding). Every tool checks circle membership, including the fan-out across all circles, which
+  is the easiest place to leak by accident. `list_upcoming` merges payments and chores onto one timeline so the assistant
+  does not have to reconcile two lists. Invites it creates stay pending until a person accepts.
+- **Containment before the call.** The file's real type is checked from its bytes, daily per-user limits apply, and
+  per-user and platform-wide monthly spend ceilings are charged at worst case before the call, then reconciled.
 
 ## Approach and key decisions
 - **Record the money, never move it.** PayUp keeps the ledger; people settle wherever they already pay each other. No

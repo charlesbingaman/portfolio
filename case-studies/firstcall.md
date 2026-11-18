@@ -4,6 +4,20 @@
 
 ![Landing: live proof points and a one-click demo](img/firstcall/landing.png)
 
+## The chain in short
+- **Customer problem:** a (fictional) operator transfers 24% of 11.8M calls a year, and "train the agents" was the brief.
+- **Workflow:** diagnose why calls transfer, size each fix in dollars, prove it with a matched-control pilot, and deliver
+  the training part through practice.
+- **The agent at the center:** an AI customer that agents practice against by text or voice, with a live copilot and a
+  debrief after each call. It is the part of the program that trains the 43% of avoidable transfers training can fix.
+- **Why it has to be strong:** a weak AI customer teaches the wrong habits, a loose debrief gives unreliable coaching, and
+  call transcripts contain customer PII. Real-sounding customers, trustworthy scoring and redaction are what make the
+  training worth the pilot.
+- **How it was made reliable:** PII redaction before anything is stored or sent to the model, schema-validated output with a
+  deterministic fallback for every AI feature, a hard daily cost cap, and a blind coach-vs-AI scoring design (kappa per skill).
+  No coach scores exist yet, so agreement is not reported.
+- **Outcome:** a live one-click demo built in one day. The pilot readout is simulated.
+
 ## The problem
 The client is a fictional operator selling mobile, home fiber, TV, devices and insurance. Its contact center takes 11.8M calls a year, transfers 24% of them and resolves 66% on first contact. The brief said "train the agents". The diagnosis says that's only part of the answer.
 
