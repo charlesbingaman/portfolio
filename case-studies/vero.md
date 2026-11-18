@@ -8,13 +8,19 @@ Aug–Sep 2026 · TypeScript · Next.js · Postgres + pgvector · Cloudflare R2 
 you can click through to the documents behind it.*
 
 ## TL;DR
-- **An archive that files itself.** Every document becomes typed, dated, sourced metadata, and from it come a career
-  timeline, claims, deadlines and an entity graph. Nobody files anything.
-- **AI-native, with a boundary that can't be talked around.** Local rules send passports, tax forms and diaries to a
-  vault before any third-party call. The vault is never embedded, and agents connected over MCP see only its metadata.
-- **Production rigour:** 1,398 commits and 370 merged PRs in 28 active days, 348 test files and 120 migrations. On a
-  30-query retrieval eval, recall@10 is 1.00, and reranking lifts MRR from 0.85 to 0.98 while cutting decoy leakage
-  from 6% to 0%.
+- **Customer problem:** a life's paperwork is scattered, and an AI assistant could answer questions about it, but giving one
+  access to an archive that also holds passports and diaries means trusting a promise.
+- **Workflow:** every document is read, typed, dated and sourced by extraction agents, with no manual filing. From that come a
+  timeline, claims with evidence, deadlines and an entity graph.
+- **The agents at the center:** extraction decides what the archive knows, and a read-only MCP server of seven tools lets
+  Claude and other agents work from it. Local rules send passports, tax forms and diaries to a vault before any third-party
+  call. The vault is never embedded, and agents see only its metadata.
+- **Why they must be strong:** a misfiled sensitive document cannot be undone, and an agent that is wrong about a date or a
+  claim erodes trust in everything else. So claims carry evidence and a confidence (below 60% becomes a question for the
+  owner), and spend is approved before it happens.
+- **How it was made reliable:** a 30-query retrieval eval (recall@10 1.00; reranking lifts MRR from 0.85 to 0.98 and cuts decoy
+  leakage from 6% to 0%), row-level security tested with and without it, and 348 test files.
+- **Outcome:** 1,398 commits and 370 merged PRs in 28 active days; ingest, briefs and connectors run unattended.
 
 ## The problem
 A life's paperwork is scattered across drives, notes and inboxes, and none of it answers "the receipt for my camera in 2021". An AI assistant could answer those questions, but connecting
