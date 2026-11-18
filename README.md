@@ -10,18 +10,18 @@ be strong, how I made it reliable, and the outcome. Code is mostly private and a
 A (fictional) operator transfers 24% of its calls. I diagnosed why (training fixes only 43% of avoidable transfers), sized
 each lever in dollars, designed a matched-control pilot, and built the AI practice agent that delivers the training:
 voice calls with an AI customer, a copilot and debriefs, with PII redaction, schema-checked output, a $1/day cost cap and
-a blind coach-vs-AI scoring design. **One-click demo, built in one day.** The pilot readout is simulated.
+a blind coach-vs-AI scoring design. One-click demo, built in one day. The pilot readout is simulated.
 [Case study](case-studies/firstcall.md) · [Live demo](https://firstcall-psi.vercel.app)
 
 ## [PayUp](case-studies/payup.md): shared expenses that get split right, in any currency
 [![PayUp](case-studies/img/payup/app-hero-framed.jpg)](case-studies/payup.md)
 One typed sentence or a receipt photo becomes a correctly split expense across 162 currencies, and an AI assistant can
-run the household's admin through 17 MCP tools. It can read and file, but no tool settles anything, and a test asserts that. **377 commits in 25 active days.**
+run the household's admin through 17 MCP tools. It can read and file, but no tool settles anything, and a test asserts that. 377 commits in 25 active days.
 [Case study](case-studies/payup.md) · [Live](https://yopayup.com)
 
 ## [Vero](case-studies/vero.md): an operating system for your life's information
 [![Vero](case-studies/img/vero/hero-framed.jpg)](case-studies/vero.md)
-It files itself, builds your timeline, claims and connections with evidence, briefs you daily, and gives AI agents safe access. Agents work from it over seven read-only MCP tools, and vaulted documents are never embedded or returned to them. A 30-query retrieval eval gates search quality. **1,398 commits in 28 active days.**
+It files itself, builds your timeline, claims and connections with evidence, briefs you daily, and gives AI agents safe access. Agents work from it over seven read-only MCP tools, and vaulted documents are never embedded or returned to them. A 30-query retrieval eval gates search quality. 1,398 commits in 28 active days.
 [Case study](case-studies/vero.md) · [Live](https://myown.life) (private)
 
 ## [Kindred](case-studies/kindred.md): volunteer once, qualify everywhere
